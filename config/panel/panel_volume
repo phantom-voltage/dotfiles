@@ -1,0 +1,17 @@
+#!/bin/bash
+
+. ~/.config/var_colors
+
+COLOR=$BLUE0
+
+STATUS=$(amixer get Master | grep 'Mono: Playback' | awk '{gsub(/%,/,""); print $6}' | sed -E 's/(\[|\])//g')
+VOL=$(amixer get Master | grep 'Mono: Playback' | awk '{gsub(/%,/,""); print $4}' | sed -E 's/(\[|\])//g')
+
+if [[ "$STATUS" == "on" ]]
+then
+	ICON="\uE203"
+else
+	ICON="\uE202"
+fi
+
+echo -e "%{F$COLOR}$ICON $VOL%{F-}"

@@ -1,0 +1,49 @@
+#!/bin/bash
+
+. ~/.config/var_colors
+
+BAT=`acpi -b | awk '{gsub(/%,/,""); print $4}' | sed 's/%//g'`
+STATUS=`acpi -b | awk '{gsub(/%,/,""); print $3}' | sed 's/,//g' `
+
+if [[ "$STATUS" != "Discharging" ]]
+then
+	COLOR=$GREEN1		
+	ICON="\uE201"
+
+elif [[ $BAT -lt 5 ]]
+then
+	COLOR=$RED1
+	ICON="\uE1FD"
+
+
+elif [[ $BAT -lt 10 ]]
+then
+	COLOR=$RED0
+	ICON="\uE1FD"
+
+
+elif [[ $BAT -lt 20 ]]
+then
+	COLOR=$YELLOW1
+	ICON="\uE1FE"
+
+
+elif [[ $BAT -lt 50 ]]
+then
+	COLOR=$BLUE1
+	ICON="\uE1FE"
+
+
+elif [[ $BAT -lt 75 ]]
+then
+	COLOR=$BLUE0
+	ICON="\uE1FF"
+
+else
+	COLOR=$GREEN0		
+	ICON="\uE1FF"
+
+
+fi
+
+echo -e  "%{F$COLOR}$ICON$BAT%%{F-}"

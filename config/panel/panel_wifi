@@ -1,0 +1,37 @@
+#!/bin/bash
+
+. ~/.config/var_colors
+
+COLOR=$BLUE0
+
+WIFI=wlp2s0
+
+WIFI_SSID=$(iw $WIFI link | grep 'SSID' | sed 's/SSID: //' | sed 's/\t//')
+WIFI_SIGNAL=$(iw $WIFI link | grep 'signal' | sed 's/signal: //' | sed 's/\t//' | sed 's/dBm//')
+WIFI_SIGNAL="$WIFI_SIGNAL"dbm
+#WIFI_IP=$(ifconfig wlp3s0 | grep "inet " | cut -d' ' -f10)
+QUAL=`iwconfig $WIFI | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $3}'`
+MAX=`iwconfig $WIFI | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $4}'`
+PERC=`echo $QUAL*100/$MAX | bc`
+
+
+
+ICON=""
+case $PERC in
+	[0-9])
+		ICON="\uE21F"
+	;;
+	[2-4]*)
+		ICON="\uE220"
+	;;
+	[5-7]*)
+		ICON="\uE221"
+	;;
+	*)
+		ICON="\uE222"
+	;;
+esac
+
+#  echo -e "\uE1AF $WIFI_SSID $ICON $WIFI_SIGNAL"
+  echo -e "%{F$COLOR}$ICON $WIFI_SSID $WIFI_SIGNAL%{F-}"
+

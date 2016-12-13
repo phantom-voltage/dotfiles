@@ -1,0 +1,34 @@
+#!/bin/bash
+
+. ~/.config/var_colors
+
+TEMP=$(sensors | grep temp1 | tail -n 1 | awk '{gsub(/%,/,""); print $2}' | cut -c2-3)
+
+ICON="\uE0CA"
+
+COLOR=""
+
+case $TEMP in
+        [0-2]*)
+                COLOR=$BLUE0
+        ;;
+        [3-4]*)
+                COLOR=$BLUE1
+        ;;
+        [4-6]*)
+                COLOR=$WHITE1
+        ;;
+	7*)
+		COLOR=$CYAN0
+	;;
+	[8-9]*)
+		COLOR=$RED0
+	;;
+        *)
+                COLOR=$RED1
+        ;;
+esac
+
+echo -e "%{F$COLOR}$ICON $TEMP°C%{F-}"
+
+

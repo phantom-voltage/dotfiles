@@ -1,1 +1,3 @@
-/home/phantom/.vimperatorrc
+colorscheme indigo
+
+set maxitems=10

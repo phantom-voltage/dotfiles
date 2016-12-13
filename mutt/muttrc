@@ -1,1 +1,44 @@
-/home/phantom/.mutt/muttrc
+#LOGIN DETAILS
+#sourced from ~/.mutt/personal which contains:
+#set from = 'username@gmail.com'
+#set realname = 'realname'
+#set imap_user = 'username@gmail.com'
+#set smtp_url = 'smtp://username@smtp.gmail.com:587/'
+source "~/.mutt/personal"
+
+#PASSWORDS
+source "gpg -d ~/.mutt/passwords.gpg |"
+
+#REMOTE GMAIL FOLDERS
+set folder = 'imaps://imap.gmail.com:993'
+set spoolfile ='+INBOX'
+set postponed = '+[Google Mail]/Drafts'
+set trash = '+[Google Mail]/Trash'
+
+set header_cache = ~/.mutt/cache/headers
+#set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+
+set move = no
+set imap_keepalive = 900
+
+set sort = reverse-date-received
+
+alternative_order text/plain text/html
+auto_view text/html
+
+#COSMETICS
+source ~/.mutt/mutt_colors
+
+##ABOOK
+set query_command= "abook --mutt-query '%s'"
+macro index,pager  a "<pipe-message>abook --add-email-quiet<return>" "Add this sender to Abook"
+bind editor        <Tab> complete-query
+
+#EDITOR
+set text_flowed=yes
+set edit_headers =yes
+set editor="vim -S ~/.mutt/vimrc +:9"
+#set editor = "vim -c 'set tw=74' -c 'set wrap' +:8"
+
+

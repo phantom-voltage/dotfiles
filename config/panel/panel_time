@@ -1,0 +1,8 @@
+#!/bin/bash
+
+. ~/.config/var_colors
+
+COLOR0=$BLUE0
+COLOR1=$BLUE0
+
+echo -e "%{F$COLOR0}\uE225 %{F$COLOR1}$(date +'%a, %e %b') %{F$COLOR0}\uE015 %{F$COLOR1}$(date +'%H:%M')%{F-}"

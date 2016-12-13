@@ -1,1 +1,14 @@
-/home/phantom/.mutt/vimrc
+syntax on
+
+setlocal fo+=aw
+
+au BufRead /tmp/mutt-* set tw=72
+
+set textwidth=0
+set wrapmargin=0
+
+setlocal spell spelllang=lv,en_us
+
+autocmd BufRead /tmp/mutt-* execute "normal /^$/\n"
+autocmd BufRead /tmp/mutt-* execute ":startinsert"
+

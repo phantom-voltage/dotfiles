@@ -1,6 +1,0 @@
-#vim: set ft=muttrc:
-set from = 'davis.zvejnieks@gmail.com'
-set realname = 'Davis Zvejnieks'
-
-set imap_user = 'davis.zvejnieks@gmail.com'
-set smtp_url = 'smtp://davis.zvejnieks@smtp.gmail.com:587/'

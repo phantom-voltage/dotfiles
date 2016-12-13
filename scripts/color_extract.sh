@@ -1,0 +1,1 @@
+/home/phantom/bin/color_extract.sh

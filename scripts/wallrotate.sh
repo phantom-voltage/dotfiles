@@ -1,0 +1,1 @@
+/home/phantom/bin/wallrotate.sh

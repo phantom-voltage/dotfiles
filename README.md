@@ -23,5 +23,7 @@ Terminal font used is gohufont, it's bitmap. I use rxvt-unicode.
 ## Firefox
 In addition to that, I have some customized Firefox userchrome.css files, that were based on [twily's](http://twily.info/) comprehensive edits. I had to make some edits to fix some issues his configs had with later versions of Firefox (50+). This, however, made things a bit uglier.
 
+Also, the screenshot shown displays some of the customization for vimperator, which is included in this repo.
+
 <img src="/img/firefox_1.png" width="766">
 

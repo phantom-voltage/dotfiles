@@ -1,0 +1,48 @@
+// vim: set ft=xdefaults:
+
+# COLDLAVA Modified
+# nxll <nxll@teknik.io>
+# Modified by Phantom Voltage
+
+#mouse_background=#57607A
+#mouse_foreground=#FEDDD0
+#highlight=#57607A
+#border=#3C4254
+
+*.cursorColor: #817FA3
+*.background: #3c4654
+#*.background: #2A333C
+*.foreground: #FEDDD0
+
+##BLACK
+*.color0: #3c4654
+!*.color0: #4B5269
+*.color8: #57607A
+
+#RED
+*.color1: #D8686D
+*.color9: #ED7278
+
+#GREEN
+*.color2: #24A49F
+*.color10: #43B8B4
+
+#YELLOW
+*.color3: #EBC6A1
+*.color11: #FFD7AF
+
+#BLUE
+*.color4: #918EB3
+*.color12: #A19EC7
+
+#MAGENTA
+*.color5: #875F87
+*.color13: #9C6D9C
+
+#CYAN
+*.color6: #F77C6C
+*.color14: #FF806F
+
+#WHITE
+*.color7: #FDCBAC
+*.color15: #FDCBAC

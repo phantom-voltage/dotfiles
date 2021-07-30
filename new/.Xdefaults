@@ -1,0 +1,65 @@
+#include "/home/phantom/.config/term_colors"
+
+#Extensions
+URxvt.perl-ext:
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher:  firefox 
+
+#URL cosmetics
+URxvt.url-select.underline: true
+URxvt.colorUL: #77abff
+
+#Clickable URL's
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+#Yankable URL's
+#URxvt.keysym.M-f: perl:matcher:last
+URxvt.keysym.M-f: perl:matcher:list
+
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+
+#Copy & Paste
+URxvt.keysym.M-c:       perl:clipboard:copy
+URxvt.keysym.M-v:       perl:clipboard:paste
+URxvt.iso14755: False
+
+
+URxvt*scrollBar:	false
+
+URxvt*depth: 32
+! Xft settings
+Xft.dpi: 100 
+Xft.hinting: true
+Xft.hintstyle: hintfull
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+Xft.autohint: 0
+! Xft.antialias: 0
+! Xft.hinting: 0
+! special
+
+
+
+#URxvt.font: xft:Envy Code R:antialias=true:Monospace:pixelsize=12
+#URxvt.boldFont: xft:Envy Code R:antialias=true:Monospace:pixelsize=12
+
+#URxvt.font: -*-unscii-*-*-*-tall-*-*-*-*-*-*-*-*
+#URxvt.boldFont: -*-unscii-*-*-*-tall-*-*-*-*-*-*-*-*
+
+#URxvt.font: -*-kakwafont-*-*-normal-*-*-*-*-*-*-*-*-*, -*-siji-*-*-*-*-10-*-*-*-*-*-*-*
+#URxvt.boldFont: -*-kakwafont-*-*-normal-*-*-*-*-*-*-*-*-*
+
+URxvt.font: xft:Iosevka Term Heavy-9:Monospace, Font Awesome 5 Free-9
+URxvt.boldFont: xft:Iosevka Term Heavy-9:Monospace
+
+#URxvt.font: xft:PressStart2P:style=regular:antialias=true:pixelsize=12
+#URxvt.boldFont: xft:PressStart2P:style=regular:antialias=true:pixelsize=12
+#URxvt.font: -mplus-goth_p-medium-r-normal--12-120-75-75-p-60-jisx0201.1976-0
+
+URxvt.cursorBlink: 1
+URxvt.letterSpace: 0
+
